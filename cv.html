@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Gerald Urey | CV</title>
+<meta name="description" content="CV of Gerald Urey, digital marketer: SEO, content, campaigns, social and reporting.">
+<link rel="icon" href="assets/img/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .cv { max-width: 860px; margin: 0 auto; padding: 110px var(--gut) 80px; }
+  .cv-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+  .cv h1 { font-size: clamp(40px, 7vw, 68px); }
+  .cv-top p { color: var(--muted); margin-top: 8px; }
+  .cv h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 40px 0 16px; }
+  .cv .summary { font-size: 19px; max-width: 64ch; }
+  .impact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .impact div { border: 1px solid var(--line); border-radius: 16px; padding: 18px; background: var(--card); font-size: 14px; color: var(--muted); }
+  .impact b { display: block; font-size: 30px; font-weight: 500; letter-spacing: -.03em; color: var(--ink); }
+  .job { display: grid; grid-template-columns: 150px 1fr; gap: 6px 24px; padding: 20px 0; border-top: 1px solid var(--line); break-inside: avoid; }
+  .job time { color: var(--muted); font-size: 14px; padding-top: 3px; }
+  .job h3 { font-size: 19px; letter-spacing: -.01em; }
+  .job .org { color: var(--muted); font-size: 15px; margin: 2px 0 10px; }
+  .job ul, .skills { padding-left: 18px; font-size: 15.5px; display: grid; gap: 6px; }
+  .skills { padding: 0; list-style: none; }
+  .skills b { font-weight: 500; }
+  @media (max-width: 640px) { .job { grid-template-columns: 1fr; } .impact { grid-template-columns: 1fr; } }
+  @media print {
+    @page { margin: 14mm; }
+    body { background: #fff; font-size: 10.5pt; }
+    .nav, .no-print { display: none !important; }
+    .cv { padding: 0; max-width: none; }
+    .cv h1 { font-size: 30pt; }
+    .cv h2 { margin: 18pt 0 8pt; }
+    .job { padding: 9pt 0; grid-template-columns: 105pt 1fr; }
+    .cv .summary { font-size: 11pt; }
+    .impact b { font-size: 16pt; }
+    .impact div { padding: 8pt; }
+    a { text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav scrolled">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/img/logo.webp" alt=""><span>Gerald Urey</span></a>
+    <div style="display:flex;gap:10px">
+      <a class="btn ghost small" href="index.html">← Portfolio</a>
+      <button class="btn small" id="print" type="button" style="cursor:pointer;font-family:inherit">Download PDF</button>
+    </div>
+  </div>
+</header>
+
+<!--
+  HOW TO EDIT THIS CV
+  Change any text below and save the file. Each job is one <article class="job"> block:
+  copy a block to add a job, delete a block to remove one.
+  "Download PDF" opens the print window: choose "Save as PDF".
+-->
+<main class="cv">
+  <div class="cv-top">
+    <div>
+      <h1>Gerald <em>Urey</em></h1>
+      <p>Digital marketer · Leeds, UK · Willing to relocate</p>
+    </div>
+    <p><a href="mailto:gerald_payeurey@hotmail.com">gerald_payeurey@hotmail.com</a></p>
+  </div>
+
+  <h2>Profile</h2>
+  <p class="summary">Digital marketer with five years' experience across SEO, websites, content, social media, email and performance reporting. I turn business objectives into clear digital plans, coordinate the people needed to deliver them, and measure what worked. Experienced in both large organisations and small, fast-moving teams. Bilingual in Dutch and English.</p>
+
+  <h2>Selected impact</h2>
+  <div class="impact">
+    <div><b>#1 on Google</b>for a Tier-1 contractor's priority service keyword, and cited in the AI Overview.</div>
+    <div><b>16s → 56s</b>average website engagement time, through better content, structure and user journeys.</div>
+    <div><b>+11%</b>domain authority from targeted SEO, content optimisation and technical fixes.</div>
+  </div>
+
+  <h2>Experience</h2>
+
+  <article class="job">
+    <time>2026</time>
+    <div>
+      <h3>Digital Marketing Executive</h3>
+      <p class="org">The Dalesman Group · Bradford</p>
+      <ul>
+        <li>Ran day-to-day digital marketing across several B2B and B2C food brands, turning commercial priorities into website, content, social, SEO and email activity.</li>
+        <li>Planned, shot and published the Gordon Rhodes Great Yorkshire Show campaign end to end; social impressions rose 392% month on month.</li>
+        <li>Led website and content projects covering SEO, product launches, site structure and user journeys.</li>
+        <li>Wrote a trade article series for the group website and built the monthly digital performance report for managers.</li>
+        <li>Coordinated internal stakeholders, designers, developers and external partners to keep work on schedule and on brand.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <time>2026 to present</time>
+    <div>
+      <h3>Content Manager (Volunteer)</h3>
+      <p class="org">Leeds and District Football Association</p>
+      <ul>
+        <li>Plan and deliver the association's content and social media across competitions and community initiatives.</li>
+        <li>Design graphic templates that give the association a consistent, recognisable identity.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <time>2023 to present</time>
+    <div>
+      <h3>Founder and Content Creator</h3>
+      <p class="org">General Sports</p>
+      <ul>
+        <li>Founded an independent grassroots football media brand; more than 36 million video views across Facebook, YouTube and TikTok between January 2025 and March 2026.</li>
+        <li>Produce short-form video, photography, graphics and written content, from research and filming through to editing and publication.</li>
+        <li>Manage content planning, creative direction and delivery independently.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <time>Mar 2024 to Dec 2025</time>
+    <div>
+      <h3>Digital Content Coordinator (Contract)</h3>
+      <p class="org">Sir Robert McAlpine · London</p>
+      <ul>
+        <li>Managed website content through a major platform migration for a Tier-1 construction contractor, maintaining search visibility, accuracy and brand consistency.</li>
+        <li>Delivered SEO improvements to site structure, content and usability; took the Digital Construction service page to the top of Google.</li>
+        <li>Used GA4, Search Console and SEMrush to find opportunities, benchmark against sector competitors and report on AI-assistant referral traffic.</li>
+        <li>Acted as the central point for stakeholder requests, clarifying requirements and tracking issues through to resolution with developers.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <time>Oct 2023 to Mar 2024</time>
+    <div>
+      <h3>Marketing Manager</h3>
+      <p class="org">Think Like a Pony · Leeds</p>
+      <ul>
+        <li>Managed marketing across content, website and social media during an organisational transition.</li>
+        <li>Introduced content planning processes that improved consistency and prioritisation.</li>
+        <li>Improved website content and messaging to strengthen clarity and brand presentation.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <time>Sep 2021 to Jul 2023</time>
+    <div>
+      <h3>Marketing Coordinator</h3>
+      <p class="org">Lindab Ltd · Leeds</p>
+      <ul>
+        <li>Delivered multi-channel B2B marketing across digital, social media and email.</li>
+        <li>Created and managed content for websites, campaigns and internal communications.</li>
+        <li>Coordinated stakeholders across several marketing projects, balancing deadlines and dependencies.</li>
+        <li>Monitored performance and used the findings to improve audience engagement.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <time>Jun to Sep 2021</time>
+    <div>
+      <h3>Digital Content Producer</h3>
+      <p class="org">Synergy UK · Sheffield</p>
+      <ul>
+        <li>Carried out keyword research and optimised content to improve organic visibility, including local search rankings.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <time>Earlier</time>
+    <div>
+      <h3>Freelance Sports Media Support</h3>
+      <p class="org">Viper Sport TV</p>
+    </div>
+  </article>
+
+  <h2>Skills and tools</h2>
+  <ul class="skills">
+    <li><b>SEO and performance:</b> search intent, keyword research, on-page SEO, competitor benchmarking, GA4, Search Console, SEMrush.</li>
+    <li><b>Content and delivery:</b> campaign and content planning, copywriting, WordPress and Umbraco CMS, stakeholder coordination.</li>
+    <li><b>Social and video:</b> short-form video filming and editing, photography, Facebook, Instagram, LinkedIn, TikTok and YouTube.</li>
+    <li><b>Tools:</b> Adobe tools, CapCut, Canva, Hootsuite, Loomly, Metricool, Mailchimp.</li>
+  </ul>
+
+  <h2>Education</h2>
+  <p>BA (Hons) International Business and Finance, University of Derby</p>
+
+  <h2>Languages</h2>
+  <p>Dutch (native), English (fluent)</p>
+</main>
+<script src="js/cv.js"></script>
+</body>
+</html>
