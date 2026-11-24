@@ -189,3 +189,28 @@ footer nav { display: flex; gap: 20px; flex-wrap: wrap; }
 footer a { text-decoration: none; } footer a:hover { color: var(--on-dark); }
 
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .pill i { animation: none; } }
+
+/* Lightbox: click any photo, graphic or video to view it full size */
+.zoomable { cursor: zoom-in; }
+html:has(.lightbox[open]) { overflow: hidden; }
+.lightbox { border: 0; padding: 0; margin: 0; width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; background: rgba(10, 11, 9, .95); color: #fff; }
+.lightbox::backdrop { background: rgba(10, 11, 9, .6); }
+.lightbox[open] { display: grid; grid-template-rows: minmax(0, 1fr) auto; animation: lb-in .25s ease; }
+@keyframes lb-in { from { opacity: 0; } }
+.lb-stage { display: grid; place-items: center; padding: 70px 84px 10px; min-height: 0; }
+.lb-stage img, .lb-stage video { display: block; max-width: calc(100vw - 168px); max-height: calc(100dvh - 130px); width: auto; height: auto; object-fit: contain; border-radius: 12px; cursor: auto; }
+.lb-cap { text-align: center; font-size: 14px; color: rgba(255, 255, 255, .75); padding: 4px var(--gut) 22px; min-height: 48px; }
+.lightbox button { position: absolute; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); background: rgba(16, 17, 14, .6); color: #fff; font-size: 18px; cursor: pointer; transition: background .25s, color .25s; }
+.lightbox button:hover { background: #fff; color: var(--ink); }
+.lb-close { top: 16px; right: 16px; font-size: 24px; }
+.lb-prev, .lb-next { top: 50%; transform: translateY(-50%); }
+.lb-prev { left: 20px; } .lb-next { right: 20px; }
+.lightbox.single .lb-prev, .lightbox.single .lb-next { display: none; }
+@media (max-width: 640px) {
+  .lb-stage { padding: 66px 12px 10px; }
+  .lb-stage img, .lb-stage video { max-width: calc(100vw - 24px); max-height: calc(100dvh - 190px); }
+  .lb-prev, .lb-next { top: auto; bottom: 18px; transform: none; }
+  .lb-prev { left: calc(50% - 56px); } .lb-next { right: calc(50% - 56px); }
+  .lb-cap { padding-bottom: 80px; }
+}
+@media (prefers-reduced-motion: reduce) { .lightbox[open] { animation: none; } }
