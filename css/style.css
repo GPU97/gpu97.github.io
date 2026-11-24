@@ -214,3 +214,9 @@ html:has(.lightbox[open]) { overflow: hidden; }
   .lb-cap { padding-bottom: 80px; }
 }
 @media (prefers-reduced-motion: reduce) { .lightbox[open] { animation: none; } }
+
+/* YouTube link tile (opens the video on YouTube) */
+.shot.yt { display: block; color: #fff; text-decoration: none; }
+.shot.yt .play { pointer-events: none; width: 64px; height: 64px; font-size: 20px; top: 50%; left: 50%; right: auto; transform: translate(-50%, -50%); }
+.shot.yt .yt-cap { position: absolute; left: 10px; bottom: 10px; font-size: 12px; padding: 5px 10px; border-radius: 99px; background: rgba(16, 17, 14, .72); backdrop-filter: blur(6px); }
+.shot.yt:hover img { transform: scale(1.04); }

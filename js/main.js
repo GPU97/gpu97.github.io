@@ -9,7 +9,7 @@
   if (yr) yr.textContent = new Date().getFullYear();
 
   // Video play / pause buttons
-  document.querySelectorAll('.shot .play').forEach(function (btn) {
+  document.querySelectorAll('figure.shot .play').forEach(function (btn) {
     var video = btn.parentElement.querySelector('video');
     btn.addEventListener('click', function () {
       if (video.paused) {
@@ -47,7 +47,7 @@
   }
 
   // Lightbox: click any photo, graphic or video in a grid or the slider to open it full size
-  var zoomItems = Array.prototype.slice.call(document.querySelectorAll('.shot, .slider figure'));
+  var zoomItems = Array.prototype.slice.call(document.querySelectorAll('figure.shot, .slider figure'));
   if (zoomItems.length && window.HTMLDialogElement) {
     var box = document.createElement('dialog');
     box.className = 'lightbox';
