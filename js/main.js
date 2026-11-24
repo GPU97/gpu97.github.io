@@ -46,6 +46,67 @@
     update();
   }
 
+  // Lightbox: click any photo, graphic or video in a grid or the slider to open it full size
+  var zoomItems = Array.prototype.slice.call(document.querySelectorAll('.shot, .slider figure'));
+  if (zoomItems.length && window.HTMLDialogElement) {
+    var box = document.createElement('dialog');
+    box.className = 'lightbox';
+    box.setAttribute('aria-label', 'Media viewer');
+    box.innerHTML = '<div class="lb-stage"></div><p class="lb-cap"></p>' +
+      '<button type="button" class="lb-close" aria-label="Close">×</button>' +
+      '<button type="button" class="lb-prev" aria-label="Previous">←</button>' +
+      '<button type="button" class="lb-next" aria-label="Next">→</button>';
+    document.body.appendChild(box);
+    var stage = box.querySelector('.lb-stage');
+    var cap = box.querySelector('.lb-cap');
+    var group = [], at = 0;
+    var show = function (i) {
+      at = (i + group.length) % group.length;
+      var fig = group[at];
+      var v = fig.querySelector('video'), img = fig.querySelector('img'), fc = fig.querySelector('figcaption');
+      var el;
+      if (v) {
+        el = document.createElement('video');
+        el.src = v.currentSrc || v.src; el.poster = v.poster;
+        el.controls = true; el.loop = true; el.muted = true; el.playsInline = true; el.autoplay = true;
+      } else {
+        el = document.createElement('img');
+        el.src = img.currentSrc || img.src; el.alt = img.alt;
+      }
+      stage.innerHTML = '';
+      stage.appendChild(el);
+      cap.textContent = fc ? fc.textContent : (img ? img.alt : '');
+    };
+    zoomItems.forEach(function (fig) {
+      fig.classList.add('zoomable');
+      fig.tabIndex = 0;
+      var media = fig.querySelector('img, video');
+      var label = (fig.querySelector('figcaption') || {}).textContent || (media && media.alt) || 'media';
+      fig.setAttribute('aria-label', 'Open ' + label + ' full size');
+      var open = function () {
+        group = Array.prototype.slice.call(fig.parentElement.children).filter(function (c) { return c.tagName === 'FIGURE'; });
+        document.querySelectorAll('.shot video').forEach(function (v) { v.pause(); });
+        box.classList.toggle('single', group.length < 2);
+        show(group.indexOf(fig));
+        box.showModal();
+      };
+      fig.addEventListener('click', function (e) { if (!e.target.closest('.play')) open(); });
+      fig.addEventListener('keydown', function (e) {
+        if (e.target === fig && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); open(); }
+      });
+    });
+    box.querySelector('.lb-close').addEventListener('click', function () { box.close(); });
+    box.querySelector('.lb-prev').addEventListener('click', function () { show(at - 1); });
+    box.querySelector('.lb-next').addEventListener('click', function () { show(at + 1); });
+    box.addEventListener('click', function (e) { if (e.target === box || e.target === stage) box.close(); });
+    box.addEventListener('keydown', function (e) {
+      if (group.length < 2) return;
+      if (e.key === 'ArrowLeft') show(at - 1);
+      if (e.key === 'ArrowRight') show(at + 1);
+    });
+    box.addEventListener('close', function () { stage.innerHTML = ''; });
+  }
+
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !window.gsap || !window.ScrollTrigger) return;
   gsap.registerPlugin(ScrollTrigger);
